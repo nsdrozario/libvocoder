@@ -1,11 +1,17 @@
 #include <VocoderProcessor.hpp>
 using namespace Vocoder;
 
-VocoderProcessor::VocoderProcessor(unsigned long long sampleRate, int nFilters, float start, float end) : Fs(sampleRate), n(nFilters), start(start), end(end) {
-    this->fd = VocoderFilterDistributor(Fs, n, this->start, this->end);
-    this->filterBank = FilterBank(n, Fs, &(this->fd));
-    this->graphicEQ = FilterBank(n, Fs, &(this->fd));
-    envelopes.resize(n);
+VocoderProcessor::VocoderProcessor(unsigned long long sampleRate, int nFilters, float start, float end) : 
+    Fs(sampleRate), 
+    n(nFilters), 
+    start(start), 
+    end(end), 
+    fd(sampleRate, nFilters, start, end), 
+    filterBank(n, Fs, &fd), 
+    graphicEQ(n, Fs, &fd), 
+    envelopes(n) 
+{
+        
 }
 
 VocoderProcessor::~VocoderProcessor() {
