@@ -11,11 +11,11 @@ namespace Vocoder {
         ma_lpf1 low_pass_filter;
 
     public:
-        EnvelopeDetector(size_t sample_rate);
+        EnvelopeDetector(unsigned long long sample_rate);
         ~EnvelopeDetector();
 
         // Returns the resulting sample
         float process_sample(float input);
-        
+
     }
 }
