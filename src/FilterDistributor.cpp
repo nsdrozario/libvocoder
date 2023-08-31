@@ -4,11 +4,11 @@
 using namespace Vocoder;
 
 FilterDistributor::FilterDistributor(
-    unsigned long long sample_rate,
+    unsigned long long sampleRate,
     int nMax, 
     float startFreq, 
     float endFreq
-) : Fs(sample_rate), n(nMax), start(startFreq), end(endFreq) {
+) : Fs(sampleRate), n(nMax), start(startFreq), end(endFreq) {
 
 }
 

@@ -2,7 +2,7 @@
 #include <cmath>
 using namespace Vocoder;
 
-VocoderFilterDistributor::VocoderFilterDistributor(unsigned long long sample_rate, int nMax, float startFreq, float endFreq) : FilterDistributor(sample_rate, nMax, startFreq, endFreq) {
+VocoderFilterDistributor::VocoderFilterDistributor(unsigned long long sampleRate, int nMax, float startFreq, float endFreq) : FilterDistributor(sampleRate, nMax, startFreq, endFreq) {
 
 }
 

@@ -11,7 +11,7 @@ namespace Vocoder {
         ma_lpf1 low_pass_filter;
 
     public:
-        EnvelopeDetector(unsigned long long sample_rate);
+        EnvelopeDetector(unsigned long long sampleRate);
         ~EnvelopeDetector();
 
         // Returns the resulting sample

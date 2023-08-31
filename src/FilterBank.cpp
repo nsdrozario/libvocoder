@@ -1,7 +1,7 @@
 #include <FilterBank.hpp>
 using namespace Vocoder;
 
-FilterBank::FilterBank(int num_filters, unsigned long long sample_rate, FilterDistributor *fd) : fd(fd), n(num_filters), Fs(sample_rate) {
+FilterBank::FilterBank(int num_filters, unsigned long long sampleRate, FilterDistributor *fd) : fd(fd), n(num_filters), Fs(sampleRate) {
     filters.resize(n);
     mostRecentSample.resize(n, 0.0f);
     for (int i = 0; i < n; i++) {

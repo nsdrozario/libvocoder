@@ -3,11 +3,11 @@
 
 using namespace Vocoder;
 
-EnvelopeDetector::EnvelopeDetector(unsigned long long sample_rate) {
+EnvelopeDetector::EnvelopeDetector(unsigned long long sampleRate) {
     ma_lpf1_config cfg = ma_lpf1_config_init(
         ma_format_f32,
         1,
-        sample_rate,
+        sampleRate,
         ENVELOPE_MAX_FREQ
     );
 
