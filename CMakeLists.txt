@@ -5,6 +5,8 @@ project(
     VERSION 1.0 
     DESCRIPTION "small audio backend-agnostic dsp library for filter bank based effects"
 )
+set(CMAKE_C_FLAGS -g)
+set(CMAKE_CXX_FLAGS -g)
 
 set(
     HEADER_FILES
@@ -15,6 +17,7 @@ set(
     "include/vocoder/FilterDistributor.hpp"
     "include/vocoder/VocoderFilterDistributor.hpp"
     "include/vocoder/VocoderProcessor.hpp"
+    "include/vocoder/AudioFileWriter.hpp"
 )
 
 set(
@@ -25,6 +28,7 @@ set(
     "src/FilterDistributor.cpp"
     "src/VocoderFilterDistributor.cpp"
     "src/VocoderProcessor.cpp"
+    "src/AudioFileWriter.cpp"
 )
 
 add_library(vocoder SHARED "${SOURCES}")
@@ -46,3 +50,8 @@ install (
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
     PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDED}/vocoder
 )
+
+add_executable(vocoder_cli src/VocoderTest.cpp)
+add_dependencies(vocoder_cli vocoder)
+target_link_libraries(vocoder_cli vocoder)
+target_include_directories(vocoder_cli PUBLIC include include/vocoder)

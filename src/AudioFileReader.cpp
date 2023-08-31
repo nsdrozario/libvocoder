@@ -5,7 +5,7 @@ using namespace Vocoder;
 
 AudioFileReader::AudioFileReader(std::string path) {
     // 0 should be native sample rate
-    ma_decoder_config cfg = ma_decoder_config_init(ma_format_f32, 1, 0);
+    ma_decoder_config cfg = ma_decoder_config_init(ma_format_f32, 1, 44100);
     ma_decoder_init_file(path.c_str(), &cfg, &fileDecoder);
 }
 

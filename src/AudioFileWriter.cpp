@@ -2,7 +2,7 @@
 #include <miniaudio.h>
 using namespace Vocoder;
 
-AudioFileWriter::AudioFileWriter(std::string path, ma_uint32 sampleRate=44100, ma_encoding_format format=ma_encoding_format_wav) {
+AudioFileWriter::AudioFileWriter(std::string path, ma_uint32 sampleRate, ma_encoding_format format) {
     // 0 should be native sample rate
     ma_encoder_config cfg = ma_encoder_config_init(format, ma_format_f32, 1, sampleRate);
     ma_encoder_init_file(path.c_str(), &cfg, &fileEncoder);
