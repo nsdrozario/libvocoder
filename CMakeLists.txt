@@ -26,3 +26,10 @@ set_target_properties(vocoder PROPERTIES PUBLIC_HEADER
     include/VocoderFilterDistributor.hpp
     include/VocoderProcessor.hpp
 )
+
+install (
+    TARGETS vocoder
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+    PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDED}
+)

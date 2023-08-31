@@ -12,6 +12,5 @@ namespace Vocoder {
         virtual ~FilterDistributor() {}
         virtual float getQ(int i) const = 0;
         virtual float getCenterFreq(int i) const = 0;
-        std::tuple<float, float> operator () (int i) const;
     };
 }
