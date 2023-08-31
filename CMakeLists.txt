@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.0)
 project(libvocoder VERSION 1.0 DESCRIPTION "small audio backend-agnostic dsp library for filter bank based effects")
 
-add_library(libvocoder SHARED
+add_library(vocoder SHARED
     src/AudioFileReader.cpp
     src/EnvelopeDetector.cpp
     src/FilterBank.cpp
@@ -11,16 +11,18 @@ add_library(libvocoder SHARED
     src/VocoderProcessor.cpp
 )
 
-set_target_properties(libvocoder PROPERTIES PUBLIC_HEADER 
+target_include_directories(
+    vocoder
+    PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
+
+set_target_properties(vocoder PROPERTIES PUBLIC_HEADER 
+    include/miniaudio.h
     include/AudioFileReader.hpp
     include/EnvelopeDetector.hpp
     include/FilterBank.hpp
     include/FilterDistributor.hpp
-    include/miniaudio.h
     include/VocoderFilterDistributor.hpp
     include/VocoderProcessor.hpp
 )
-
-install(TARGETS mylib
-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})

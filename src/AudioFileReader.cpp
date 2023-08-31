@@ -1,4 +1,6 @@
 #include <AudioFileReader.hpp>
+#define MINIAUDIO_IMPLEMENTATION 
+#include <miniaudio.h>
 using namespace Vocoder;
 
 AudioFileReader::AudioFileReader(std::string path) {

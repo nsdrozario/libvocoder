@@ -17,5 +17,5 @@ namespace Vocoder {
         // Returns the resulting sample
         float process_sample(float input);
 
-    }
+    };
 }

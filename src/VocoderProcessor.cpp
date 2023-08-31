@@ -9,7 +9,7 @@ VocoderProcessor::VocoderProcessor(unsigned long long sampleRate, int nFilters, 
     fd(sampleRate, nFilters, start, end), 
     filterBank(n, Fs, &fd), 
     graphicEQ(n, Fs, &fd), 
-    envelopes(n) 
+    envelopes(n, {sampleRate}) 
 {
         
 }

@@ -6,6 +6,10 @@ VocoderFilterDistributor::VocoderFilterDistributor(unsigned long long sampleRate
 
 }
 
+VocoderFilterDistributor::~VocoderFilterDistributor() {
+    
+}
+
 float VocoderFilterDistributor::getCenterFreq(int i) const {
     // start * (base ^ n) = end
     // end/start = base ^ n
