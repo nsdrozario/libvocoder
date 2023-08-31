@@ -1,4 +1,5 @@
 # https://stackoverflow.com/questions/17511496/how-to-create-a-shared-library-with-cmake
+# https://www.fsf.org/blogs/licensing/creative-commons-by-sa-4-0-declared-one-way-compatible-with-gnu-gpl-version-3
 cmake_minimum_required(VERSION 3.0)
 project(
     libvocoder 
